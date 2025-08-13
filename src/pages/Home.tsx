@@ -22,12 +22,24 @@ const Home = () => {
           {/* Video Player */}
           <div className="aspect-video bg-muted rounded-sm overflow-hidden">
             <video
-              src="/IMG 5159.mov"
               controls
               className="w-full h-full object-cover"
               preload="metadata"
               onError={(e) => {
                 console.error('Video failed to load:', e);
+                // Show fallback message
+                const videoElement = e.target;
+                const fallback = document.createElement('div');
+                fallback.className = 'flex items-center justify-center h-full text-center p-4';
+                fallback.innerHTML = `
+                  <div>
+                    <p class="text-sm text-muted-foreground mb-2">Video format not supported</p>
+                    <p class="text-xs text-muted-foreground">File: IMG 5159.mov</p>
+                    <p class="text-xs text-muted-foreground">Try converting to MP4 format</p>
+                  </div>
+                `;
+                videoElement.parentNode.appendChild(fallback);
+                videoElement.style.display = 'none';
               }}
               onLoadStart={() => {
                 console.log('Video loading started');
