@@ -40,7 +40,7 @@ const EasterEgg = () => {
   return (
     <div className="min-h-screen bg-background flex">
       {/* Back to Home Button */}
-      <div className="absolute top-8 left-8">
+      <div className="absolute top-8 left-8 z-10">
         <Button
           variant="ghost"
           onClick={() => navigate("/")}
@@ -52,9 +52,9 @@ const EasterEgg = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex justify-center items-center p-8 lg:p-16">
-        <div className="max-w-6xl w-full flex gap-16">
+        <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-8 lg:gap-16">
           {/* Left Side - Timers */}
-          <div className="flex-1 space-y-12 ml-16">
+          <div className="flex-1 space-y-8 lg:space-y-12 lg:ml-16">
             {/* First Timer */}
             <div className="space-y-2">
               <div className="text-[20px] text-foreground leading-[105%] tracking-wide">
@@ -74,7 +74,7 @@ const EasterEgg = () => {
                 <br />
                 11:12 PM PST TO 08/13/25
                 <br />
-                05:16 AM PST:
+                05:16 AM PST
               </div>
               <div className="text-[60px] font-medium tracking-wider">
                 {formatTime(elapsed2)}

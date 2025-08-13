@@ -54,21 +54,21 @@ const Home = () => {
           {/* Signature */}
           <div className="text-center">
             <p className="text-[26px] font-medium tracking-wide">
-              FROM RISHABH
+              SINCERELY, RISHABH
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Easter Egg Link */}
-        <div className="absolute bottom-8 right-8">
-          <Button
-            variant="ghost"
-            onClick={() => navigate("/easter-egg")}
-            className="text-[20px] font-light underline hover:bg-transparent hover:text-accent"
-          >
-            Easter egg
-          </Button>
-        </div>
+      {/* Easter Egg Link - Fixed to viewport */}
+      <div className="fixed bottom-8 right-8 z-10">
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/easter-egg")}
+          className="text-[20px] font-light underline hover:bg-transparent hover:text-accent"
+        >
+          Easter egg
+        </Button>
       </div>
     </div>
   );
