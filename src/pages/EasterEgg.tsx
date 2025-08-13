@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 const EasterEgg = () => {
   const navigate = useNavigate();
   const [currentTime, setCurrentTime] = useState(new Date());
-  
+
   // Fixed start times for the counters
-  const startTime1 = new Date('2025-08-12T23:12:00');
-  const startTime2 = new Date('2025-08-12T23:12:00');
-  const endTime2 = new Date('2025-08-13T05:16:00');
+  const startTime1 = new Date("2025-08-12T23:12:00");
+  const startTime2 = new Date("2025-08-12T23:12:00");
+  const endTime2 = new Date("2025-08-13T05:16:00");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -23,7 +23,9 @@ const EasterEgg = () => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
-    return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    return `${hrs.toString().padStart(2, "0")}:${mins
+      .toString()
+      .padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
   };
 
   const getTimeDifference = (start: Date, end?: Date) => {
@@ -42,7 +44,7 @@ const EasterEgg = () => {
         <Button
           variant="ghost"
           onClick={() => navigate("/")}
-          className="text-base font-mono underline hover:bg-transparent hover:text-accent"
+          className="text-[20px] font-light underline hover:bg-transparent hover:text-accent"
         >
           Back to home
         </Button>
@@ -53,31 +55,31 @@ const EasterEgg = () => {
         <div className="max-w-6xl w-full flex gap-16">
           {/* Left Side - Timers */}
           <div className="flex-1 space-y-12 ml-16">
-          
-          {/* First Timer */}
-          <div className="space-y-4">
-            <div className="text-xs font-mono text-muted-foreground tracking-wide">
-              TIME ELAPSED SINCE 08/12/25<br />
-              11:12 PM PST:
+            {/* First Timer */}
+            <div className="space-y-2">
+              <div className="text-[20px] text-foreground leading-[105%] tracking-wide">
+                TIME ELAPSED SINCE 08/12/25
+                <br />
+                11:12 PM PST:
+              </div>
+              <div className="text-[60px] font-medium tracking-wider">
+                {formatTime(elapsed1)}
+              </div>
             </div>
-            <div className="text-6xl font-mono font-light tracking-wider">
-              {formatTime(elapsed1)}
-            </div>
-          </div>
 
-          {/* Second Timer */}
-          <div className="space-y-4">
-            <div className="text-xs font-mono text-muted-foreground tracking-wide">
-              TIME ELAPSED FROM 08/12/25<br />
-              11:12 PM PST TO 08/13/25<br />
-              05:16 AM PST
+            {/* Second Timer */}
+            <div className="space-y-2">
+              <div className="text-[20px] text-foreground leading-[105%] tracking-wide">
+                TIME ELAPSED FROM 08/12/25
+                <br />
+                11:12 PM PST TO 08/13/25
+                <br />
+                05:16 AM PST:
+              </div>
+              <div className="text-[60px] font-medium tracking-wider">
+                {formatTime(elapsed2)}
+              </div>
             </div>
-            <div className="text-6xl font-mono font-light tracking-wider">
-              {formatTime(elapsed2)}
-            </div>
-          </div>
-
-          
           </div>
 
           {/* Right Side - Image */}
@@ -87,7 +89,6 @@ const EasterEgg = () => {
               alt="Easter Egg Image"
               className="max-w-sm h-auto rounded-lg shadow-lg border border-border"
             />
-
           </div>
         </div>
       </div>
