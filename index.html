@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+    <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>" />
+    <title>from rishabh</title>
+    <meta name="description" content="Personal portfolio of Rishabh - intuitive, Nucleus-obsessed killer-generalist" />
+    <meta name="author" content="Rishabh" />
+    <script>
+      // Force remove any favicon
+      const removeFavicon = () => {
+        const links = document.querySelectorAll('link[rel*="icon"]');
+        links.forEach(link => link.remove());
+        
+        // Create a completely transparent favicon
+        const newFavicon = document.createElement('link');
+        newFavicon.rel = 'icon';
+        newFavicon.href = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90"></text></svg>';
+        document.head.appendChild(newFavicon);
+      };
+      
+      // Run on page load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', removeFavicon);
+      } else {
+        removeFavicon();
+      }
+    </script>
+
+    <meta property="og:title" content="Rishabh - Portfolio & Creative Works" />
+    <meta property="og:description" content="Personal portfolio of Rishabh - intuitive, Nucleus-obsessed killer-generalist" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/easter-egg-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/easter-egg-image.jpg" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
