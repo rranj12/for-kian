@@ -22,11 +22,22 @@ const Home = () => {
           {/* Video Player */}
           <div className="aspect-video bg-muted rounded-sm overflow-hidden">
             <video
-              src="/IMG_5159.MOV"
+              src="/IMG 5159.mov"
               controls
               className="w-full h-full object-cover"
               preload="metadata"
+              onError={(e) => {
+                console.error('Video failed to load:', e);
+              }}
+              onLoadStart={() => {
+                console.log('Video loading started');
+              }}
+              onCanPlay={() => {
+                console.log('Video can play');
+              }}
             >
+              <source src="/IMG 5159.mov" type="video/quicktime" />
+              <source src="/IMG 5159.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
