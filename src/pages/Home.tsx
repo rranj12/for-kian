@@ -20,7 +20,25 @@ const Home = () => {
           </div>
 
           {/* Video Player */}
-          <div className="aspect-video bg-muted rounded-sm overflow-hidden">
+          <div className="space-y-2">
+            {/* Test Button */}
+            <div className="text-center">
+              <button 
+                onClick={() => {
+                  const video = document.createElement('video');
+                  video.src = '/IMG 5159.mp4';
+                  video.onloadstart = () => console.log('Test video loading started');
+                  video.oncanplay = () => console.log('Test video can play');
+                  video.onerror = (e) => console.error('Test video error:', e);
+                  video.load();
+                }}
+                className="text-xs text-accent hover:underline mb-2"
+              >
+                Test Video Load
+              </button>
+            </div>
+            
+            <div className="aspect-video bg-muted rounded-sm overflow-hidden">
             <video
               controls
               className="w-full h-full object-cover"
@@ -33,9 +51,9 @@ const Home = () => {
                 fallback.className = 'flex items-center justify-center h-full text-center p-4';
                 fallback.innerHTML = `
                   <div>
-                    <p class="text-sm text-muted-foreground mb-2">Video format not supported</p>
+                    <p class="text-sm text-muted-foreground mb-2">Video failed to load</p>
                     <p class="text-xs text-muted-foreground">File: IMG 5159.mp4</p>
-                    <p class="text-xs text-muted-foreground">MP4 should work in most browsers</p>
+                    <p class="text-xs text-muted-foreground">Check console for errors</p>
                   </div>
                 `;
                 videoElement.parentNode.appendChild(fallback);
@@ -47,10 +65,21 @@ const Home = () => {
               onCanPlay={() => {
                 console.log('Video can play');
               }}
+              onLoadedData={() => {
+                console.log('Video data loaded');
+              }}
+              onLoadedMetadata={() => {
+                console.log('Video metadata loaded');
+              }}
+              onCanPlayThrough={() => {
+                console.log('Video can play through');
+              }}
             >
               <source src="/IMG 5159.mp4" type="video/mp4" />
+              <source src="/IMG 5159.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2" />
               Your browser does not support the video tag.
             </video>
+            </div>
           </div>
 
           {/* Navigation Links */}
