@@ -34,8 +34,8 @@ const Home = () => {
                 fallback.innerHTML = `
                   <div>
                     <p class="text-sm text-muted-foreground mb-2">Video format not supported</p>
-                    <p class="text-xs text-muted-foreground">File: IMG 5159.mov</p>
-                    <p class="text-xs text-muted-foreground">Try converting to MP4 format</p>
+                    <p class="text-xs text-muted-foreground">File: IMG 5159.mp4</p>
+                    <p class="text-xs text-muted-foreground">MP4 should work in most browsers</p>
                   </div>
                 `;
                 videoElement.parentNode.appendChild(fallback);
@@ -48,8 +48,7 @@ const Home = () => {
                 console.log('Video can play');
               }}
             >
-              <source src="/IMG 5159.mov" type="video/quicktime" />
-              <source src="/IMG 5159.mov" type="video/mp4" />
+              <source src="/IMG 5159.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
