@@ -9,7 +9,7 @@ const EasterEgg = () => {
   // Fixed start times for the counters
   const startTime1 = new Date('2025-08-12T23:12:00');
   const startTime2 = new Date('2025-08-12T23:12:00');
-  const endTime2 = new Date('2025-08-13T04:39:00');
+  const endTime2 = new Date('2025-08-13T05:16:00');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -70,7 +70,7 @@ const EasterEgg = () => {
             <div className="text-xs font-mono text-muted-foreground tracking-wide">
               TIME ELAPSED FROM 08/12/25<br />
               11:12 PM PST TO 08/13/25<br />
-              04:39 AM PST
+              05:16 AM PST
             </div>
             <div className="text-6xl font-mono font-light tracking-wider">
               {formatTime(elapsed2)}
