@@ -54,14 +54,25 @@ const Home = () => {
           {/* Signature */}
           <div className="text-center">
             <p className="text-[26px] font-medium tracking-wide">
-              SINCERELY, RISHABH
+              FROM RISHABH
             </p>
+          </div>
+
+          {/* Easter Egg Link - Mobile only, positioned after signature */}
+          <div className="text-center lg:hidden">
+            <Button
+              variant="ghost"
+              onClick={() => navigate("/easter-egg")}
+              className="text-[20px] font-light underline hover:bg-transparent hover:text-accent"
+            >
+              Easter egg
+            </Button>
           </div>
         </div>
       </div>
 
-      {/* Easter Egg Link - Fixed to viewport */}
-      <div className="fixed bottom-8 right-8 z-10">
+      {/* Easter Egg Link - Desktop only, fixed to viewport */}
+      <div className="hidden lg:block fixed bottom-8 right-8 z-10">
         <Button
           variant="ghost"
           onClick={() => navigate("/easter-egg")}

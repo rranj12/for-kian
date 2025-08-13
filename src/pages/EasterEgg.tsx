@@ -38,9 +38,9 @@ const EasterEgg = () => {
   const elapsed2 = getTimeDifference(startTime2, endTime2);
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen bg-background">
       {/* Back to Home Button */}
-      <div className="absolute top-8 left-8 z-10">
+      <div className="absolute top-4 left-4 lg:top-8 lg:left-8 z-10">
         <Button
           variant="ghost"
           onClick={() => navigate("/")}
@@ -51,45 +51,45 @@ const EasterEgg = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 flex justify-center items-center p-8 lg:p-16">
-        <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-8 lg:gap-16">
-          {/* Left Side - Timers */}
-          <div className="flex-1 space-y-8 lg:space-y-12 lg:ml-16">
+      <div className="flex flex-col lg:flex-row min-h-screen pt-20 lg:pt-0">
+        {/* Left Side - Timers */}
+        <div className="flex-1 flex items-center justify-center p-4 lg:p-16">
+          <div className="w-full max-w-md lg:max-w-none space-y-8 lg:space-y-12 text-center lg:text-left lg:ml-16">
             {/* First Timer */}
             <div className="space-y-2">
-              <div className="text-[20px] text-foreground leading-[105%] tracking-wide">
+              <div className="text-[18px] lg:text-[20px] text-foreground leading-[105%] tracking-wide">
                 TIME ELAPSED SINCE 08/12/25
                 <br />
                 11:12 PM PST:
               </div>
-              <div className="text-[60px] font-medium tracking-wider">
+              <div className="text-[48px] lg:text-[60px] font-medium tracking-wider">
                 {formatTime(elapsed1)}
               </div>
             </div>
 
             {/* Second Timer */}
             <div className="space-y-2">
-              <div className="text-[20px] text-foreground leading-[105%] tracking-wide">
+              <div className="text-[18px] lg:text-[20px] text-foreground leading-[105%] tracking-wide">
                 TIME ELAPSED FROM 08/12/25
                 <br />
                 11:12 PM PST TO 08/13/25
                 <br />
                 05:16 AM PST
               </div>
-              <div className="text-[60px] font-medium tracking-wider">
+              <div className="text-[48px] lg:text-[60px] font-medium tracking-wider">
                 {formatTime(elapsed2)}
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Side - Image */}
-          <div className="flex-1 flex flex-col items-center justify-center">
-            <img
-              src="/easter-egg-image.jpg"
-              alt="Easter Egg Image"
-              className="max-w-sm h-auto rounded-lg shadow-lg border border-border"
-            />
-          </div>
+        {/* Right Side - Image */}
+        <div className="flex-1 flex flex-col items-center justify-center p-4 lg:p-16">
+          <img
+            src="/easter-egg-image.jpg"
+            alt="Easter Egg Image"
+            className="w-full max-w-xs lg:max-w-sm h-auto rounded-lg shadow-lg border border-border"
+          />
         </div>
       </div>
     </div>
