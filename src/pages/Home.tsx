@@ -19,67 +19,16 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Video Player */}
-          <div className="space-y-2">
-            {/* Test Button */}
-            <div className="text-center">
-              <button 
-                onClick={() => {
-                  const video = document.createElement('video');
-                  video.src = '/IMG 5159.mp4';
-                  video.onloadstart = () => console.log('Test video loading started');
-                  video.oncanplay = () => console.log('Test video can play');
-                  video.onerror = (e) => console.error('Test video error:', e);
-                  video.load();
-                }}
-                className="text-xs text-accent hover:underline mb-2"
-              >
-                Test Video Load
-              </button>
-            </div>
-            
-            <div className="aspect-video bg-muted rounded-sm overflow-hidden">
-            <video
-              controls
-              className="w-full h-full object-cover"
-              preload="metadata"
-              onError={(e) => {
-                console.error('Video failed to load:', e);
-                // Show fallback message
-                const videoElement = e.target;
-                const fallback = document.createElement('div');
-                fallback.className = 'flex items-center justify-center h-full text-center p-4';
-                fallback.innerHTML = `
-                  <div>
-                    <p class="text-sm text-muted-foreground mb-2">Video failed to load</p>
-                    <p class="text-xs text-muted-foreground">File: IMG 5159.mp4</p>
-                    <p class="text-xs text-muted-foreground">Check console for errors</p>
-                  </div>
-                `;
-                videoElement.parentNode.appendChild(fallback);
-                videoElement.style.display = 'none';
-              }}
-              onLoadStart={() => {
-                console.log('Video loading started');
-              }}
-              onCanPlay={() => {
-                console.log('Video can play');
-              }}
-              onLoadedData={() => {
-                console.log('Video data loaded');
-              }}
-              onLoadedMetadata={() => {
-                console.log('Video metadata loaded');
-              }}
-              onCanPlayThrough={() => {
-                console.log('Video can play through');
-              }}
-            >
-              <source src="/IMG 5159.mp4" type="video/mp4" />
-              <source src="/IMG 5159.mp4" type="video/mp4; codecs=avc1.42E01E, mp4a.40.2" />
-              Your browser does not support the video tag.
-            </video>
-            </div>
+                    {/* YouTube Video Embed */}
+          <div className="aspect-video bg-muted rounded-sm overflow-hidden">
+            <iframe
+              src="https://www.youtube.com/embed/_PdX4dMLFns"
+              title="Portfolio Video"
+              className="w-full h-full"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
 
           {/* Navigation Links */}
